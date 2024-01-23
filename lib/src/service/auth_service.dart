@@ -1,19 +1,15 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
-class Auth{
+class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   User? get currentUser => _firebaseAuth.currentUser;
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
-
 
   Future<void> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
-    final user = await _firebaseAuth.signInWithEmailAndPassword(
+    await _firebaseAuth.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
@@ -23,10 +19,9 @@ class Auth{
     required String email,
     required String password,
   }) async {
-    final user = await _firebaseAuth.createUserWithEmailAndPassword(
+    await _firebaseAuth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
   }
-  }
-
+}

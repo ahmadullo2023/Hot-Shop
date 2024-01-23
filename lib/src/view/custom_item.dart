@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../common/constants/app_collors.dart';
+import '../controller/provider.dart';
 
 class CustomBottomItem extends StatelessWidget {
   const CustomBottomItem({
@@ -61,5 +63,74 @@ class ProfileItem extends StatelessWidget {
         const Divider(color: Colors.black),
       ],
     );
+  }
+}
+
+class HotShopEntr extends StatelessWidget {
+  const HotShopEntr({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 200,
+      decoration: const BoxDecoration(
+        color: AppColors.orange,
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.elliptical(200, 50),
+          bottomLeft: Radius.elliptical(200, 50),
+        ),
+      ),
+      child: const Center(
+        child: Text(
+          "Hot-Shop",
+          style: TextStyle(
+              color: Colors.white, fontSize: 40, fontWeight: FontWeight.w700),
+        ),
+      ),
+    );
+  }
+}
+
+class Sign extends StatelessWidget {
+  const Sign({
+    required this.formKey1,
+    required this.email,
+    required this.password,
+    required this.inOrUp,
+  });
+
+  final formKey1;
+  final TextEditingController email;
+  final TextEditingController password;
+  final String inOrUp;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.all(12),
+        child: DecoratedBox(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
+          child: ElevatedButton(
+            onPressed: () {
+              if (formKey1.currentState!.validate()) {
+                inOrUp == "SignIn"
+                    ? Provider.of<ProFunc>(context, listen: false)
+                        .signInWithEmailAndPassword(email, password, context)
+                    : Provider.of<ProFunc>(context, listen: false)
+                        .createUserWithEmailAndPassword(
+                            email, password, context);
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              fixedSize: const Size(400, 50),
+              backgroundColor: AppColors.orange,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(40),
+              ),
+            ),
+            child: Text(inOrUp),
+          ),
+        ));
   }
 }

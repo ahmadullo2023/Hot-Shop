@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hot_shop/src/pages/profile_page.dart';
-import 'package:hot_shop/src/pages/search_page.dart';
-import 'package:hot_shop/src/pages/sign_up.dart';
+import 'package:hot_shop/src/screens/profile_page.dart';
+import 'package:hot_shop/src/screens/search_page.dart';
 import '../common/constants/app_collors.dart';
 import '../view/custom_item.dart';
+import '../view/dealog.dart';
 import 'add_page.dart';
 import 'favorite_page.dart';
 import 'home_page.dart';
-
 
 class PageBuilder extends StatefulWidget {
   const PageBuilder({super.key});
@@ -45,14 +44,11 @@ class _PageBuilderState extends State<PageBuilder> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.de9,
+        backgroundColor: AppColors.bcColor,
         elevation: 0,
         leading: IconButton(
             onPressed: () {
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => const SignUp()), (route) => false,);
+              MyHomePage().showYesNoDialog(context);
             },
             icon: const Icon(Icons.logout),
             color: AppColors.orange),
@@ -71,7 +67,7 @@ class _PageBuilderState extends State<PageBuilder> {
             child: IconButton(
                 onPressed: () {
                   setState(() {
-                   onTap(index = 4);
+                    onTap(index = 4);
                   });
                 },
                 icon: const Icon(Icons.person),
@@ -80,9 +76,10 @@ class _PageBuilderState extends State<PageBuilder> {
         ],
       ),
       resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.de9,
+      backgroundColor: AppColors.bcColor,
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+        padding:
+            const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
         child: ClipRRect(
           borderRadius: const BorderRadius.all(
             Radius.circular(45),
@@ -162,7 +159,3 @@ class _PageBuilderState extends State<PageBuilder> {
     );
   }
 }
-
-
-
-

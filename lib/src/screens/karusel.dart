@@ -7,9 +7,9 @@ class CustomHomeCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List imagesList = [
-      "assets/images/img.png",
-      "assets/images/img.png",
-      "assets/images/img.png"
+      "assets/images/img_5.png",
+      "assets/images/img_3.png",
+      "assets/images/img_4.png"
     ];
     return CarouselSlider.builder(
       itemCount: 3,
