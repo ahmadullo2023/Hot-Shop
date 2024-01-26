@@ -10,6 +10,13 @@ class ProFunc extends ChangeNotifier {
   int value3 = 0;
   String categoryId = '';
   String categoryId1 = '';
+  TextEditingController searchTerm1 = TextEditingController();
+
+  void searchText(searchTerm){
+    searchTerm1 = searchTerm;
+    notifyListeners();
+  }
+
 
   Future<void> addTextToFirestore(
     String textName,
@@ -46,6 +53,19 @@ class ProFunc extends ChangeNotifier {
     }
   }
 
+  Future<void>  deleteFavoriteFirestore(
+    final productId,
+  ) async {
+    try{
+      await FirebaseFirestore.instance.collection('favorite').doc(productId).delete();
+      print('Document deleted successfully');
+    } catch (e){
+      print('Error deleting text: $e');
+    }
+  }
+
+
+
   void categoryIdHome(String? value, snapshot) {
     value3 = int.parse(value!);
     categoryId1 = snapshot.data!.docs[value3].id.toString();
@@ -68,7 +88,7 @@ class ProFunc extends ChangeNotifier {
           (value) => Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (BuildContext context) => const PageBuilder()),
+                builder: (BuildContext context) => PageBuilder()),
           ),
         );
   }

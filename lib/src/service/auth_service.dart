@@ -9,7 +9,7 @@ class Auth {
     required String email,
     required String password,
   }) async {
-    await _firebaseAuth.signInWithEmailAndPassword(
+    final user = await _firebaseAuth.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
@@ -19,7 +19,7 @@ class Auth {
     required String email,
     required String password,
   }) async {
-    await _firebaseAuth.createUserWithEmailAndPassword(
+    final user = await _firebaseAuth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );

@@ -59,8 +59,10 @@ class ProfileItem extends StatelessWidget {
         ListTile(
           title: titleT,
           trailing: trailingI,
+          textColor: Colors.white,
+          iconColor: Colors.white,
         ),
-        const Divider(color: Colors.black),
+        const Divider(color: Colors.white),
       ],
     );
   }

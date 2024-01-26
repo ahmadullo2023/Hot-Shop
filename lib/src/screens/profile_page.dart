@@ -22,6 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Icon(
                 Icons.account_circle,
                 size: 100,
+                color: Colors.white,
               ),
             ),
             SizedBox(height: 20),

@@ -1,30 +1,30 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../common/constants/app_collors.dart';
+import '../controller/provider.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({
     super.key,
     required this.product,
   });
-
   final QueryDocumentSnapshot<Map<String, dynamic>> product;
-
   @override
   State<ProductPage> createState() => _ProductPageState();
-
-
 }
+
+bool isCheek = false;
 
 class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
-    bool isCheek = false;
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.bcColor,
-        body: ListView(children: [
+        body: ListView(
+            children: [
           Stack(
             children: [
               Container(
@@ -57,14 +57,14 @@ class _ProductPageState extends State<ProductPage> {
                     onPressed: () {
                       setState(() {
                         isCheek = !isCheek;
-                        print(isCheek);
-                        print(!isCheek);
                       });
-                      // Provider.of<ProFunc>(context, listen: false)
-                      //     .addFavoriteFirestore(widget.product.data());
+                      isCheek ? Provider.of<ProFunc>(context, listen: false)
+                          .addFavoriteFirestore(widget.product.data())
+                          : Provider.of<ProFunc>(context, listen: false)
+                          .deleteFavoriteFirestore(widget.product.id);
                     },
                     icon: Icon(
-                      isCheek == true ? Icons.favorite_border : Icons.favorite,
+                      isCheek ? Icons.favorite: Icons.favorite_border,
                     ),
                     color: AppColors.orange,
                   ),
@@ -87,7 +87,7 @@ class _ProductPageState extends State<ProductPage> {
                   ),
                   TextSpan(
                       text: "${widget.product.data()['price']} so'm\n",
-                      style: TextStyle(
+                      style: const TextStyle(
                           decoration: TextDecoration.underline,
                           color: Colors.indigo)),
                   TextSpan(
