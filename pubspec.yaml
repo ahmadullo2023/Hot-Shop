@@ -30,7 +30,13 @@ dependencies:
   google_sign_in: ^6.1.5
   carousel_slider: ^4.2.1
   url_launcher: ^6.2.3
-
+  google_maps_flutter: ^2.5.3
+  flutter_polyline_points: ^2.0.0
+  dio: ^5.4.0
+  flutter_localization: ^0.2.0
+  flutter_svg: ^2.0.9
+#  location: ^5.0.0
+#  geolocator: ^10.1.0
 
 
 dev_dependencies:

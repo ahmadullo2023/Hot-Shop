@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hot_shop/src/screens/profile_page.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../common/constants/app_collors.dart';
@@ -76,11 +77,10 @@ class _ProductPageState extends State<ProductPage> {
             alignment: const Alignment(-.9, 0),
             child: RichText(
               text: TextSpan(
-                style: const TextStyle(color: Colors.black, fontSize: 36),
+                style: const TextStyle(color: Colors.white, fontSize: 36),
                 children: [
                   TextSpan(
-                      text: "${widget.product.data()['name']}\n",
-                      style: TextStyle(color: Colors.black)),
+                      text: "${widget.product.data()['name']}\n",),
                   TextSpan(
                     text: "${widget.product.data()['description']}\n\n",
                     style: TextStyle(color: Colors.grey, fontSize: 25),
@@ -91,12 +91,22 @@ class _ProductPageState extends State<ProductPage> {
                           decoration: TextDecoration.underline,
                           color: Colors.indigo)),
                   TextSpan(
-                      text: "${widget.product.data()['phoNum']}\n",
-                      style: TextStyle(color: Colors.black)),
+                      text: "${widget.product.data()['phoNum']}\n",),
                 ],
               ),
             ),
           ),
+
+
+          Container(
+            height: 250,
+            width: double.infinity,
+            color: Colors.blueGrey,
+            child: GoogleMap1(),
+          ),
+
+
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

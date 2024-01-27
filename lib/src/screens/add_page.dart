@@ -177,11 +177,11 @@ class _AddPageState extends State<AddPage> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     side: const BorderSide(
-                      color: Colors.black,
+                      color: Colors.white,
                     )),
                 child: const Text(
                   "Jo'ylash",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.white,),
                 ),
               ),
             ),
