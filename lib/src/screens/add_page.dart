@@ -49,7 +49,7 @@ class _AddPageState extends State<AddPage> {
                     ? IconButton(
                         onPressed: () async {
                           XFile? image = await ImagePicker()
-                              .pickImage(source: ImageSource.gallery);
+                              .pickImage(source: ImageSource.camera);
                           setState(() {
                             image1 = image;
                           });

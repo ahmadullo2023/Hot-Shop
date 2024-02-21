@@ -19,7 +19,6 @@ class _SignInState extends State<SignIn> {
   TextEditingController password = TextEditingController();
   bool isPasswordVisible = false;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +83,7 @@ class _SignInState extends State<SignIn> {
                 Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => SignUp()),
+                      builder: (BuildContext context) => const SignUp()),
                   (route) => false,
                 );
               },

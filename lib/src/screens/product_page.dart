@@ -24,8 +24,7 @@ class _ProductPageState extends State<ProductPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.bcColor,
-        body: ListView(
-            children: [
+        body: ListView(children: [
           Stack(
             children: [
               Container(
@@ -59,13 +58,14 @@ class _ProductPageState extends State<ProductPage> {
                       setState(() {
                         isCheek = !isCheek;
                       });
-                      isCheek ? Provider.of<ProFunc>(context, listen: false)
-                          .addFavoriteFirestore(widget.product.data())
+                      isCheek
+                          ? Provider.of<ProFunc>(context, listen: false)
+                              .addFavoriteFirestore(widget.product.data())
                           : Provider.of<ProFunc>(context, listen: false)
-                          .deleteFavoriteFirestore(widget.product.id);
+                              .deleteFavoriteFirestore(widget.product.id);
                     },
                     icon: Icon(
-                      isCheek ? Icons.favorite: Icons.favorite_border,
+                      isCheek ? Icons.favorite : Icons.favorite_border,
                     ),
                     color: AppColors.orange,
                   ),
@@ -80,7 +80,8 @@ class _ProductPageState extends State<ProductPage> {
                 style: const TextStyle(color: Colors.white, fontSize: 36),
                 children: [
                   TextSpan(
-                      text: "${widget.product.data()['name']}\n",),
+                    text: "${widget.product.data()['name']}\n",
+                  ),
                   TextSpan(
                     text: "${widget.product.data()['description']}\n\n",
                     style: TextStyle(color: Colors.grey, fontSize: 25),
@@ -91,22 +92,18 @@ class _ProductPageState extends State<ProductPage> {
                           decoration: TextDecoration.underline,
                           color: Colors.indigo)),
                   TextSpan(
-                      text: "${widget.product.data()['phoNum']}\n",),
+                    text: "${widget.product.data()['phoNum']}\n",
+                  ),
                 ],
               ),
             ),
           ),
-
-
           Container(
             height: 250,
             width: double.infinity,
             color: Colors.blueGrey,
             child: GoogleMap1(),
           ),
-
-
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

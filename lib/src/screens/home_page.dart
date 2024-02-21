@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hot_shop/src/common/constants/app_collors.dart';
-import 'package:hot_shop/src/screens/product_view.dart';
-import 'karusel.dart';
+import 'package:hot_shop/src/widget/product_view.dart';
+import '../widget/karusel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -153,7 +153,9 @@ class _PageBuilderState extends State<PageBuilder> {
           SearchPage(),
           FavoritePage(),
           AddPage(),
-          ProfilePage()
+          ProfilePage(),
+          //GoogleMap1()
+          //ProfilePage()
         ],
       ),
     );

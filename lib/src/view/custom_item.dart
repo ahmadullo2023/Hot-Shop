@@ -56,11 +56,16 @@ class ProfileItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          title: titleT,
-          trailing: trailingI,
-          textColor: Colors.white,
-          iconColor: Colors.white,
+        GestureDetector(
+          onTap: () {
+            DialogItem().dialogItem(context);
+          },
+          child: ListTile(
+            title: titleT,
+            trailing: trailingI,
+            textColor: Colors.white,
+            iconColor: Colors.white,
+          ),
         ),
         const Divider(color: Colors.white),
       ],
@@ -134,5 +139,37 @@ class Sign extends StatelessWidget {
             child: Text(inOrUp),
           ),
         ));
+  }
+}
+
+class DialogItem {
+  void dialogItem(context) {
+    showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        return const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Dialog(
+              backgroundColor: Color(0xFFFDE2F4),
+              child: SizedBox(
+                width: 300,
+                height: 150,
+                child: Padding(
+                  padding: EdgeInsets.all(36),
+                  child: Column(
+                    children: [
+                      Text("Tuzatish ishlari olib borilyapti",
+                       textAlign: TextAlign.center,
+                       style: TextStyle(fontSize: 25)),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hot_shop/src/common/constants/app_collors.dart';
-import 'package:hot_shop/src/screens/product_view.dart';
+import 'package:hot_shop/src/widget/product_view.dart';
 
 
 class FavoritePage extends StatefulWidget {
