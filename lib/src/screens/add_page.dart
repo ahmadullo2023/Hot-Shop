@@ -48,11 +48,45 @@ class _AddPageState extends State<AddPage> {
                 child: image1 == null
                     ? IconButton(
                         onPressed: () async {
-                          XFile? image = await ImagePicker()
-                              .pickImage(source: ImageSource.camera);
-                          setState(() {
-                            image1 = image;
-                          });
+                          showModalBottomSheet<void>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 75,
+                                color: const Color(0xFF040210),
+                                child: Center(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      ElevatedButton(
+                                        onPressed: () async {
+                                          XFile? image = await ImagePicker()
+                                              .pickImage(
+                                                  source: ImageSource.camera);
+                                          setState(() {
+                                            image1 = image;
+                                          });
+                                        },
+                                        child: const Text('Camera'),
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () async {
+                                          XFile? image = await ImagePicker()
+                                              .pickImage(
+                                                  source: ImageSource.gallery);
+                                          setState(() {
+                                            image1 = image;
+                                          });
+                                        },
+                                        child: const Text('Gallery'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
                         },
                         icon: const Icon(
                           Icons.add_circle_outline,
@@ -62,11 +96,45 @@ class _AddPageState extends State<AddPage> {
                       )
                     : GestureDetector(
                         onTap: () async {
-                          XFile? image = await ImagePicker()
-                              .pickImage(source: ImageSource.gallery);
-                          setState(() {
-                            image1 = image;
-                          });
+                          showModalBottomSheet<void>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 75,
+                                color: const Color(0xFF040210),
+                                child: Center(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      ElevatedButton(
+                                        onPressed: () async {
+                                          XFile? image = await ImagePicker()
+                                              .pickImage(
+                                                  source: ImageSource.camera);
+                                          setState(() {
+                                            image1 = image;
+                                          });
+                                        },
+                                        child: const Text('Camera'),
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () async {
+                                          XFile? image = await ImagePicker()
+                                              .pickImage(
+                                                  source: ImageSource.gallery);
+                                          setState(() {
+                                            image1 = image;
+                                          });
+                                        },
+                                        child: const Text('Gallery'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
                         },
                         child: Image.file(
                           File(image1!.path),
@@ -181,7 +249,9 @@ class _AddPageState extends State<AddPage> {
                     )),
                 child: const Text(
                   "Jo'ylash",
-                  style: TextStyle(color: Colors.white,),
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),

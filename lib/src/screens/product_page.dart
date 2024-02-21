@@ -84,31 +84,34 @@ class _ProductPageState extends State<ProductPage> {
                   ),
                   TextSpan(
                     text: "${widget.product.data()['description']}\n\n",
-                    style: TextStyle(color: Colors.grey, fontSize: 25),
+                    style: const TextStyle(color: Colors.grey, fontSize: 25),
                   ),
                   TextSpan(
-                      text: "${widget.product.data()['price']} so'm\n",
-                      style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.indigo)),
+                    text: "${widget.product.data()['price']} so'm\n",
+                    style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.blue),
+                  ),
                   TextSpan(
-                    text: "${widget.product.data()['phoNum']}\n",
+                      text: "${widget.product.data()['phoNum']}\n",
+                      style:
+                          const TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ],
               ),
             ),
           ),
           Container(
-            height: 250,
+            height: 300,
             width: double.infinity,
             color: Colors.blueGrey,
-            child: GoogleMap1(),
+            child: const GoogleMap1(),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 10, right: 10),
+                padding: const EdgeInsets.only(top: 10, bottom: 10),
                 child: ElevatedButton(
                   onPressed: () async {
                     makePhoneCall(widget.product.data()['phoNum'].toString());
