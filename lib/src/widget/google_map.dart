@@ -51,7 +51,6 @@ class _GoogleMap1State extends State<GoogleMap1> {
         onPressed: () async {
           getUserCurrentLocation().then((value) async {
             print("LLLLLLLLLLLLLL${LatLng(value.latitude, value.longitude)}");
-           // Provider.of<ProFunc>(context).latLngFunc(LatLng(value.latitude, value.longitude));
             _markers.add(Marker(
               markerId: const MarkerId("2"),
               position: LatLng(value.latitude, value.longitude),
@@ -63,6 +62,8 @@ class _GoogleMap1State extends State<GoogleMap1> {
             controller.animateCamera(
                 CameraUpdate.newCameraPosition(cameraPosition),);
             setState(() {});
+            Provider.of<ProFunc>(context).latLngFunc(LatLng(value.latitude, value.longitude));
+            //print("OOOOOOO${Provider.of<ProFunc>(context, listen: true).latLngFunc}");
           });
         },
         child: const Icon(Icons.center_focus_strong),

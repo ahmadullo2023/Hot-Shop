@@ -9,14 +9,15 @@ class ProFunc extends ChangeNotifier {
   int value3 = 0;
   String categoryId = '';
   String categoryId1 = '';
-  LatLng latLng1 = LatLng(33.6844, 73.0479);
+  late LatLng latLng1;
   TextEditingController searchTerm1 = TextEditingController();
 
 
-  // void latLngFunc(latLng2){
-  //   latLng1 = latLng2;
-  //   notifyListeners();
-  // }
+  LatLng latLngFunc(latLng2){
+    latLng1 = latLng2;
+    return latLng1;
+    notifyListeners();
+  }
 
 
   void searchText(searchTerm){
