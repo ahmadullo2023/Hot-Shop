@@ -57,10 +57,6 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 }
 
-
-
-
-
 // class GoogleMap1 extends StatefulWidget {
 //   const GoogleMap1({Key? key}) : super(key: key);
 //

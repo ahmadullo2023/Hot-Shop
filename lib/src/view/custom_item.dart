@@ -160,8 +160,8 @@ class DialogItem {
                   child: Column(
                     children: [
                       Text("Tuzatish ishlari olib borilyapti",
-                       textAlign: TextAlign.center,
-                       style: TextStyle(fontSize: 25)),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 25)),
                     ],
                   ),
                 ),

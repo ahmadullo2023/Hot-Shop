@@ -12,19 +12,16 @@ class ProFunc extends ChangeNotifier {
   late LatLng latLng1;
   TextEditingController searchTerm1 = TextEditingController();
 
-
-  LatLng latLngFunc(latLng2){
+  LatLng latLngFunc(latLng2) {
     latLng1 = latLng2;
     return latLng1;
     notifyListeners();
   }
 
-
-  void searchText(searchTerm){
+  void searchText(searchTerm) {
     searchTerm1 = searchTerm;
     notifyListeners();
   }
-
 
   Future<void> addTextToFirestore(
     String textName,
@@ -63,18 +60,19 @@ class ProFunc extends ChangeNotifier {
     }
   }
 
-  Future<void>  deleteFavoriteFirestore(
+  Future<void> deleteFavoriteFirestore(
     final productId,
   ) async {
-    try{
-      await FirebaseFirestore.instance.collection('favorite').doc(productId).delete();
+    try {
+      await FirebaseFirestore.instance
+          .collection('favorite')
+          .doc(productId)
+          .delete();
       print('Document deleted successfully');
-    } catch (e){
+    } catch (e) {
       print('Error deleting text: $e');
     }
   }
-
-
 
   void categoryIdHome(String? value, snapshot) {
     value3 = int.parse(value!);

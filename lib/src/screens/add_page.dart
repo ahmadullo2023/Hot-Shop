@@ -222,7 +222,6 @@ class _AddPageState extends State<AddPage> {
               ),
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.all(12),
             child: Container(
@@ -232,7 +231,6 @@ class _AddPageState extends State<AddPage> {
               child: const GoogleMap1(),
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.all(12),
             child: SizedBox(
@@ -248,14 +246,14 @@ class _AddPageState extends State<AddPage> {
 
                   await Provider.of<ProFunc>(context, listen: false)
                       .addTextToFirestore(
-                          textName.text,
-                          textPrice.text,
-                          textDescription.text,
-                          downloadUrl,
-                          textPhone.text,
-                          categoryId,
-                          //Provider.of<ProFunc>(context).latLng1.toString(),
-                          latLng.toString(),
+                    textName.text,
+                    textPrice.text,
+                    textDescription.text,
+                    downloadUrl,
+                    textPhone.text,
+                    categoryId,
+                    //Provider.of<ProFunc>(context).latLng1.toString(),
+                    latLng.toString(),
                   );
                 },
                 style: OutlinedButton.styleFrom(

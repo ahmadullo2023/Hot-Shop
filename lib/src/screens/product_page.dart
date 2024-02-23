@@ -94,9 +94,8 @@ class _ProductPageState extends State<ProductPage> {
                         color: Colors.blue),
                   ),
                   TextSpan(
-                      text: "${widget.product.data()['phoNum']}\n",
-                      style:
-                          const TextStyle(color: Colors.white, fontSize: 25),
+                    text: "${widget.product.data()['phoNum']}\n",
+                    style: const TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ],
               ),

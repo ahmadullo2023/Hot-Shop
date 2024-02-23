@@ -27,7 +27,10 @@ class _SearchPageState extends State<SearchPage> {
           stream: FirebaseFirestore.instance
               .collection('product')
               //.where("categoryId", isEqualTo: Provider.of<ProFunc>(context).categoryId)
-              .where("name", isEqualTo: Provider.of<ProFunc>(context, listen: false).searchTerm1.text)
+              .where("name",
+                  isEqualTo: Provider.of<ProFunc>(context, listen: false)
+                      .searchTerm1
+                      .text)
               .snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
@@ -47,24 +50,24 @@ class _SearchPageState extends State<SearchPage> {
                         child: SizedBox(
                           height: 45,
                           child: TextField(
-                            controller: searchTerm,
-                            style: const TextStyle(color: Colors.white),
-                            decoration: const InputDecoration(
-                              suffixIcon: Icon(Icons.search),
-                              hintText: "Search",
-                              hintStyle: TextStyle(color: Colors.white),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
+                              controller: searchTerm,
+                              style: const TextStyle(color: Colors.white),
+                              decoration: const InputDecoration(
+                                suffixIcon: Icon(Icons.search),
+                                hintText: "Search",
+                                hintStyle: TextStyle(color: Colors.white),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
                                 ),
                               ),
-                            ),
-                            onChanged: (value) {
-                              Provider.of<ProFunc>(context, listen: false)
-                                  .searchFirestore(value);
-                              Provider.of<ProFunc>(context, listen: false).searchText(searchTerm);
-                            }
-                          ),
+                              onChanged: (value) {
+                                Provider.of<ProFunc>(context, listen: false)
+                                    .searchFirestore(value);
+                                Provider.of<ProFunc>(context, listen: false)
+                                    .searchText(searchTerm);
+                              }),
                         ),
                       ),
                     ],

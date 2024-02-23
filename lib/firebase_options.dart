@@ -52,7 +52,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '494861180035',
     projectId: 'hotshop-d738d',
     authDomain: 'hotshop-d738d.firebaseapp.com',
-    databaseURL: 'https://hotshop-d738d-default-rtdb.europe-west1.firebasedatabase.app',
+    databaseURL:
+        'https://hotshop-d738d-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'hotshop-d738d.appspot.com',
     measurementId: 'G-ZQGV1WH07K',
   );
@@ -62,7 +63,8 @@ class DefaultFirebaseOptions {
     appId: '1:494861180035:android:ecae896c647b1873bc8fb6',
     messagingSenderId: '494861180035',
     projectId: 'hotshop-d738d',
-    databaseURL: 'https://hotshop-d738d-default-rtdb.europe-west1.firebasedatabase.app',
+    databaseURL:
+        'https://hotshop-d738d-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'hotshop-d738d.appspot.com',
   );
 
@@ -71,7 +73,8 @@ class DefaultFirebaseOptions {
     appId: '1:494861180035:ios:4066b3f9cbac3930bc8fb6',
     messagingSenderId: '494861180035',
     projectId: 'hotshop-d738d',
-    databaseURL: 'https://hotshop-d738d-default-rtdb.europe-west1.firebasedatabase.app',
+    databaseURL:
+        'https://hotshop-d738d-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'hotshop-d738d.appspot.com',
     iosBundleId: 'nematov.dev.hotShop',
   );

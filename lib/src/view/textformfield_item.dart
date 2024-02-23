@@ -19,7 +19,6 @@ class ItemTextField extends StatelessWidget {
   final bool? obscureText;
   final bool isPasswordVisible;
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,19 +43,18 @@ class ItemTextField extends StatelessWidget {
 }
 
 class ItemTextField2 extends StatelessWidget {
-  const ItemTextField2(
-      {super.key,
-      required this.textController,
-      required this.hintText,
-      this.maxLength,
-      this.textType,
-      });
+  const ItemTextField2({
+    super.key,
+    required this.textController,
+    required this.hintText,
+    this.maxLength,
+    this.textType,
+  });
 
   final TextEditingController textController;
   final String hintText;
   final int? maxLength;
   final TextInputType? textType;
-
 
   @override
   Widget build(BuildContext context) {

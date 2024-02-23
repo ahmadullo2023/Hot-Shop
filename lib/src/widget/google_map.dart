@@ -57,12 +57,16 @@ class _GoogleMap1State extends State<GoogleMap1> {
               infoWindow: const InfoWindow(title: "My Current location"),
             ));
             CameraPosition cameraPosition = CameraPosition(
-                zoom: 14, target: LatLng(value.latitude, value.longitude),);
+              zoom: 14,
+              target: LatLng(value.latitude, value.longitude),
+            );
             final GoogleMapController controller = await _controller.future;
             controller.animateCamera(
-                CameraUpdate.newCameraPosition(cameraPosition),);
+              CameraUpdate.newCameraPosition(cameraPosition),
+            );
             setState(() {});
-            Provider.of<ProFunc>(context).latLngFunc(LatLng(value.latitude, value.longitude));
+            Provider.of<ProFunc>(context)
+                .latLngFunc(LatLng(value.latitude, value.longitude));
             //print("OOOOOOO${Provider.of<ProFunc>(context, listen: true).latLngFunc}");
           });
         },
@@ -72,5 +76,3 @@ class _GoogleMap1State extends State<GoogleMap1> {
     );
   }
 }
-
-
