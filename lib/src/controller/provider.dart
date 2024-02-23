@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../screens/page_builder.dart';
 import '../service/auth_service.dart';
 
@@ -10,7 +9,15 @@ class ProFunc extends ChangeNotifier {
   int value3 = 0;
   String categoryId = '';
   String categoryId1 = '';
+  LatLng latLng1 = LatLng(33.6844, 73.0479);
   TextEditingController searchTerm1 = TextEditingController();
+
+
+  // void latLngFunc(latLng2){
+  //   latLng1 = latLng2;
+  //   notifyListeners();
+  // }
+
 
   void searchText(searchTerm){
     searchTerm1 = searchTerm;
@@ -25,6 +32,7 @@ class ProFunc extends ChangeNotifier {
     String url1,
     String textPhone,
     String categoryId,
+    String latLng,
   ) async {
     print("opopopoopopopopopopopopoppopo");
     try {
@@ -34,7 +42,8 @@ class ProFunc extends ChangeNotifier {
         "description": textDescription,
         "url": url1,
         "phoNum": textPhone,
-        "categoryId": categoryId
+        "categoryId": categoryId,
+        "latLng": latLng
       });
       print('Text added successfully');
     } catch (e) {
@@ -88,7 +97,7 @@ class ProFunc extends ChangeNotifier {
           (value) => Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (BuildContext context) => PageBuilder()),
+                builder: (BuildContext context) => const PageBuilder()),
           ),
         );
   }

@@ -2,11 +2,13 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hot_shop/src/view/textformfield_item.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import '../common/constants/app_collors.dart';
 import '../controller/provider.dart';
+import '../widget/google_map.dart';
 
 class AddPage extends StatefulWidget {
   const AddPage({Key? key}) : super(key: key);
@@ -26,6 +28,8 @@ class _AddPageState extends State<AddPage> {
   int? value2 = 0;
   String brandId = '';
   String categoryId = '';
+  LatLng latLng = LatLng(33.6844, 73.0479);
+  String latLng4 = "Hello";
   XFile? image1;
 
   @override
@@ -218,6 +222,17 @@ class _AddPageState extends State<AddPage> {
               ),
             ),
           ),
+
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Container(
+              height: 200,
+              width: double.infinity,
+              color: Colors.blueGrey,
+              child: const GoogleMap1(),
+            ),
+          ),
+
           Padding(
             padding: const EdgeInsets.all(12),
             child: SizedBox(
@@ -238,7 +253,10 @@ class _AddPageState extends State<AddPage> {
                           textDescription.text,
                           downloadUrl,
                           textPhone.text,
-                          categoryId);
+                          categoryId,
+                          //Provider.of<ProFunc>(context).latLng1.toString(),
+                          latLng.toString(),
+                  );
                 },
                 style: OutlinedButton.styleFrom(
                     shape: RoundedRectangleBorder(

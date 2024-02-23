@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../common/constants/app_collors.dart';
 import '../controller/provider.dart';
+import '../widget/google_map.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({

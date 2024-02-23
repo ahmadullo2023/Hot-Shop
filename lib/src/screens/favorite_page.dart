@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:hot_shop/src/common/constants/app_collors.dart';
 import 'package:hot_shop/src/widget/product_view.dart';
 
-
 class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
 
@@ -17,9 +16,7 @@ class _FavoritePageState extends State<FavoritePage> {
     return Scaffold(
       backgroundColor: AppColors.bcColor,
       body: StreamBuilder(
-        stream: FirebaseFirestore.instance
-            .collection('favorite')
-            .snapshots(),
+        stream: FirebaseFirestore.instance.collection('favorite').snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());

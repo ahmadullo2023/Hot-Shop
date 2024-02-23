@@ -58,46 +58,7 @@ class ProfileItem extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-
-
-
-
-
-
-            showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return Container(
-                  height: 100,
-                  color: Color(0xFF040210),
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        ElevatedButton(
-                          child: const Text('Camera'),
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                        ElevatedButton(
-                          child: const Text('Gallery'),
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            );
-
-
-
-
-
-
-
-
-
-            //DialogItem().dialogItem(context);
+            DialogItem().dialogItem(context);
           },
           child: ListTile(
             title: titleT,
