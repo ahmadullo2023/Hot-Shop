@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hot_shop/src/common/constants/app_collors.dart';
 import 'package:lottie/lottie.dart';
-
 import '../screens/sign_in.dart';
 
 class SplashPage extends StatefulWidget {
