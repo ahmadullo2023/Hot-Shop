@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../screens/page_builder.dart';
+import '../view/page_builder.dart';
 import '../service/auth_service.dart';
 
 class ProFunc extends ChangeNotifier {
@@ -9,12 +9,12 @@ class ProFunc extends ChangeNotifier {
   int value3 = 0;
   String categoryId = '';
   String categoryId1 = '';
-  late LatLng latLng1;
+  late String latLng1;
   TextEditingController searchTerm1 = TextEditingController();
 
-  LatLng latLngFunc(latLng2) {
-    latLng1 = latLng2;
-    return latLng1;
+  void latLngFunc(latLng2) {
+    latLng1 = latLng2.toString();
+    print("HELLO AHMADULLO$latLng1");
     notifyListeners();
   }
 

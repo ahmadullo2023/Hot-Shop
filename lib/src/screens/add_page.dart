@@ -28,7 +28,6 @@ class _AddPageState extends State<AddPage> {
   int? value2 = 0;
   String brandId = '';
   String categoryId = '';
-  LatLng latLng = LatLng(33.6844, 73.0479);
   String latLng4 = "Hello";
   XFile? image1;
 
@@ -231,6 +230,9 @@ class _AddPageState extends State<AddPage> {
               child: const GoogleMap1(),
             ),
           ),
+          const Center(
+            child: Text("Siz turgan joy", style: TextStyle(color: Colors.white),),
+          ),
           Padding(
             padding: const EdgeInsets.all(12),
             child: SizedBox(
@@ -243,7 +245,6 @@ class _AddPageState extends State<AddPage> {
                       .child('images/${image1!.path.split('/').last}')
                       .putFile(File(image1!.path));
                   var downloadUrl = await snapshot.ref.getDownloadURL();
-
                   await Provider.of<ProFunc>(context, listen: false)
                       .addTextToFirestore(
                     textName.text,
@@ -252,8 +253,7 @@ class _AddPageState extends State<AddPage> {
                     downloadUrl,
                     textPhone.text,
                     categoryId,
-                    //Provider.of<ProFunc>(context).latLng1.toString(),
-                    latLng.toString(),
+                    Provider.of<ProFunc>(context, listen: false).latLng1,
                   );
                 },
                 style: OutlinedButton.styleFrom(

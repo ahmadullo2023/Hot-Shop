@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:hot_shop/src/screens/profile_page.dart';
 import 'package:hot_shop/src/screens/search_page.dart';
 import '../common/constants/app_collors.dart';
-import '../view/custom_item.dart';
-import '../view/dealog.dart';
-import 'add_page.dart';
-import 'favorite_page.dart';
-import 'home_page.dart';
+import 'custom_item.dart';
+import 'dealog.dart';
+import '../screens/add_page.dart';
+import '../screens/favorite_page.dart';
+import '../screens/home_page.dart';
 
 class PageBuilder extends StatefulWidget {
   const PageBuilder({super.key});

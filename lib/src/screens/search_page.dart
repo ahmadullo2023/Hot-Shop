@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hot_shop/src/widget/product_view.dart';
+import 'package:hot_shop/src/view/product_view.dart';
 import 'package:provider/provider.dart';
 import '../common/constants/app_collors.dart';
 import '../controller/provider.dart';
