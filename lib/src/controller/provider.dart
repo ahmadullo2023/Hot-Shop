@@ -9,8 +9,22 @@ class ProFunc extends ChangeNotifier {
   int value3 = 0;
   String categoryId = '';
   String categoryId1 = '';
+  late String lat1;
+  late String lng1;
   late String latLng1;
   TextEditingController searchTerm1 = TextEditingController();
+
+
+  void latFunc(lat2) {
+    lat1 = lat2.toString();
+    print("HELLO AHMADULLO$lat1");
+    notifyListeners();
+  }
+  void lngFunc(lng2) {
+    lng1 = lng2.toString();
+    print("HELLO AHMADULLO$lng1");
+    notifyListeners();
+  }
 
   void latLngFunc(latLng2) {
     latLng1 = latLng2.toString();
@@ -30,6 +44,8 @@ class ProFunc extends ChangeNotifier {
     String url1,
     String textPhone,
     String categoryId,
+    String lat1,
+    String lng1,
     String latLng,
   ) async {
     print("opopopoopopopopopopopopoppopo");
@@ -41,6 +57,8 @@ class ProFunc extends ChangeNotifier {
         "url": url1,
         "phoNum": textPhone,
         "categoryId": categoryId,
+        "lat": lat1,
+        "lng": lng1,
         "latLng": latLng
       });
       print('Text added successfully');

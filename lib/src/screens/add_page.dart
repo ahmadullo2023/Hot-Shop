@@ -253,6 +253,8 @@ class _AddPageState extends State<AddPage> {
                     downloadUrl,
                     textPhone.text,
                     categoryId,
+                    Provider.of<ProFunc>(context, listen: false).lat1,
+                    Provider.of<ProFunc>(context, listen: false).lng1,
                     Provider.of<ProFunc>(context, listen: false).latLng1,
                   );
                 },

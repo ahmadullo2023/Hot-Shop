@@ -13,6 +13,7 @@ class ProductPage extends StatefulWidget {
     required this.product,
   });
   final QueryDocumentSnapshot<Map<String, dynamic>> product;
+
   @override
   State<ProductPage> createState() => _ProductPageState();
 }
@@ -105,7 +106,7 @@ class _ProductPageState extends State<ProductPage> {
             height: 300,
             width: double.infinity,
             color: Colors.blueGrey,
-            child: const GoogleMap1(),
+            child: GoogleMap2(product: widget.product),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
