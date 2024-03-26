@@ -85,15 +85,6 @@ class _GoogleMap1State extends State<GoogleMap1> {
 
 
 
-
-
-
-
-
-
-
-
-
 class GoogleMap2 extends StatefulWidget {
   const GoogleMap2({
     super.key,
